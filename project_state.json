@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Campus Circular Mart – a second-hand marketplace exclusively for college students. Features user authentication, browseable listings with search and category filters, listing creation with photo upload, listing detail pages with seller contact info, and a My Listings management page. Categories include Textbooks, Electronics, Clothing, Furniture, Stationery, and Other. Campus-friendly responsive UI.",
+  "architectural_notes": [
+    "Backend: user identity tied to IC principal; listings stored with title, description, price, category, imageId, seller principal, timestamp",
+    "Blob storage component used for listing photo uploads",
+    "Delete listing restricted to listing owner only"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Campus Circular Mart logo mark — a circular icon with a stylized shopping bag and a graduation cap rendered in campus green on a white cream background (campus-circular-mart-logo.dim_256x256.png)\n- Placeholder listing image for listings without a photo — a soft warm-toned illustration of a generic product silhouette with a subtle campus green border (listing-placeholder.dim_400x300.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-internet-identity-based-authentication-only-authenticated-users-can-post-listings-or-view-seller-contact-info-unauthenticated-users-can-browse-listings-but-are-shown-a-login-prompt-when-attempting-to-post-or-contact-a-seller",
+      "title": "Implement Internet Identity-based authentication. Only authenticated users can post listings or view seller contact info. Unauthenticated users can browse listings but are shown a login prompt when attempting to post or contact a seller.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-listings-browse-page-home-page-that-displays-all-active-listings-in-a-responsive-card-grid-each-card-shows-the-listing-image-or-a-placeholder-title-price-and-a-category-badge-include-a-search-bar-that-filters-by-title-or-description-and-category-filter-chips-for-all-six-categories-plus-an-all-option-show-an-empty-state-message-when-no-listings-match",
+      "title": "Build a Listings Browse page (home page) that displays all active listings in a responsive card grid. Each card shows the listing image (or a placeholder), title, price, and a category badge. Include a search bar that filters by title or description, and category filter chips for all six categories plus an All option. Show an empty state message when no listings match.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-post-listing-form-page-accessible-only-to-authenticated-users-the-form-must-include-fields-for-title-text-input-description-textarea-price-numeric-input-category-dropdown-with-all-six-categories-and-photo-upload-image-file-input-on-submission-upload-the-image-and-store-the-listing-in-the-backend-show-validation-errors-for-required-fields",
+      "title": "Build a Post Listing form page, accessible only to authenticated users. The form must include fields for: title (text input), description (textarea), price (numeric input), category (dropdown with all six categories), and photo upload (image file input). On submission, upload the image and store the listing in the backend. Show validation errors for required fields.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-listing-detail-page-or-modal-that-shows-the-full-listing-image-title-description-price-category-badge-seller-display-name-and-post-timestamp-include-a-contact-seller-button-that-is-only-active-for-authenticated-users-when-clicked-by-an-authenticated-user-it-reveals-the-seller-s-display-name-and-a-pre-formatted-contact-message",
+      "title": "Build a Listing Detail page or modal that shows the full listing: image, title, description, price, category badge, seller display name, and post timestamp. Include a Contact Seller button that is only active for authenticated users. When clicked by an authenticated user, it reveals the seller's display name and a pre-formatted contact message.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-my-listings-page-accessible-only-to-authenticated-users-it-displays-all-listings-posted-by-the-currently-logged-in-user-each-listing-entry-includes-the-listing-image-thumbnail-title-price-category-badge-and-a-delete-button-clicking-delete-removes-the-listing-via-the-backend-delete-function-which-enforces-ownership-show-an-empty-state-if-the-user-has-no-listings",
+      "title": "Build a My Listings page accessible only to authenticated users. It displays all listings posted by the currently logged-in user. Each listing entry includes the listing image thumbnail, title, price, category badge, and a Delete button. Clicking Delete removes the listing via the backend delete function which enforces ownership. Show an empty state if the user has no listings.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-responsive-navbar-that-includes-the-app-logo-and-name-campus-circular-mart-navigation-links-to-browse-post-a-listing-and-my-listings-and-a-login-logout-button-reflecting-authentication-state-the-navbar-must-be-mobile-responsive-with-a-hamburger-menu-on-small-screens",
+      "title": "Build a responsive Navbar that includes the app logo and name Campus Circular Mart, navigation links to Browse, Post a Listing, and My Listings, and a login/logout button reflecting authentication state. The navbar must be mobile-responsive with a hamburger menu on small screens.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-warm-campus-friendly-visual-theme-consistently-across-the-entire-application-use-a-color-palette-centered-on-campus-green-as-the-primary-color-with-warm-neutral-accents-such-as-cream-and-light-tan-for-backgrounds-listing-cards-should-have-subtle-shadows-and-rounded-corners-category-badges-should-use-distinct-muted-colors-per-category-the-layout-should-feel-like-a-modern-student-marketplace",
+      "title": "Apply a warm campus-friendly visual theme consistently across the entire application. Use a color palette centered on campus green as the primary color with warm neutral accents such as cream and light tan for backgrounds. Listing cards should have subtle shadows and rounded corners. Category badges should use distinct muted colors per category. The layout should feel like a modern student marketplace.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User authentication – login/signup gate so only logged-in students can post or contact sellers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Listings browse page with search bar and category filter chips",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Post a listing form with title, description, price, category, and photo upload",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Listing detail page showing full info, seller name, and Contact Seller button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "My Listings page – view and delete own listings",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Predefined categories: Textbooks, Electronics, Clothing, Furniture, Stationery, Other",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Responsive campus-friendly UI with card grid, category badges, empty states, and warm color palette",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Implement backend data model and CRUD for listings. Each listing must store: title (Text), description (Text), price (Float), category (variant: Textbooks | Electronics | Clothing | Furniture | Stationery | Other), imageId (Text, optional), seller principal (Principal), seller display name (Text), and timestamp (Int). Expose query functions for: all active listings, listings by category, listings by seller principal. Expose update functions for: create listing, delete listing (only the owner can delete their own listing).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Campus Circular Mart",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

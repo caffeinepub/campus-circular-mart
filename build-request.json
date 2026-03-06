@@ -1,0 +1,200 @@
+{
+  "kind": "build_request",
+  "title": "Campus Circular Mart – College Second-Hand Marketplace",
+  "projectName": "Campus Circular Mart",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement Internet Identity-based authentication. Only authenticated users can post listings or view seller contact info. Unauthenticated users can browse listings but are shown a login prompt when attempting to post or contact a seller.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "User authentication (login/signup) so only logged-in students can post or contact sellers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Unauthenticated users can browse the listings page",
+        "Clicking Post a Listing or Contact Seller redirects unauthenticated users to a login prompt",
+        "After login, the user is returned to their intended action",
+        "Navbar displays login/logout button and logged-in user state"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement backend data model and CRUD for listings. Each listing must store: title (Text), description (Text), price (Float), category (variant: Textbooks | Electronics | Clothing | Furniture | Stationery | Other), imageId (Text, optional), seller principal (Principal), seller display name (Text), and timestamp (Int). Expose query functions for: all active listings, listings by category, listings by seller principal. Expose update functions for: create listing, delete listing (only the owner can delete their own listing).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "CRUD for listings (title, description, price, category, imageId, seller principal, timestamp)",
+          "Query: all listings, listings by category, listings by seller",
+          "Delete listing (only owner can delete)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Listings can be created with all required fields",
+        "All active listings are returned by the query function",
+        "Listings can be filtered by category",
+        "Listings can be filtered by seller principal",
+        "Only the listing owner can delete their listing; others receive an error",
+        "Timestamps are recorded at creation time"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a Listings Browse page (home page) that displays all active listings in a responsive card grid. Each card shows the listing image (or a placeholder), title, price, and a category badge. Include a search bar that filters by title or description, and category filter chips for all six categories plus an All option. Show an empty state message when no listings match.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Listings page: browse all active second-hand listings with search and category filter",
+          "Home/Browse page with search bar and category chips",
+          "Listing card grid",
+          "Empty states for no listings / no results"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All active listings are displayed as cards in a responsive grid",
+        "Each card shows image or placeholder, title, price, and category badge",
+        "Search bar filters listings in real-time by title or description",
+        "Category chips filter listings to show only matching category",
+        "Selecting All removes the category filter",
+        "An empty state is shown when no listings match the current filters"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a Post Listing form page, accessible only to authenticated users. The form must include fields for: title (text input), description (textarea), price (numeric input), category (dropdown with all six categories), and photo upload (image file input). On submission, upload the image and store the listing in the backend. Show validation errors for required fields.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Post a listing: form with title, description, price, category, and photo upload",
+          "Post Listing form (with image upload via blob-storage)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form is only accessible to authenticated users; unauthenticated users see a login prompt",
+        "All fields (title, description, price, category, photo) are present",
+        "Submitting with missing required fields shows validation errors",
+        "On successful submission, the new listing appears on the Browse page",
+        "The uploaded image is displayed on the listing"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build a Listing Detail page or modal that shows the full listing: image, title, description, price, category badge, seller display name, and post timestamp. Include a Contact Seller button that is only active for authenticated users. When clicked by an authenticated user, it reveals the seller's display name and a pre-formatted contact message.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Listing detail page: view full listing, seller info, and a Contact Seller button (shows seller's display name / message)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking a listing card opens the detail page or modal",
+        "Full listing details are displayed including image, title, description, price, category, seller name, and timestamp",
+        "Contact Seller button is visible; unauthenticated users are prompted to log in",
+        "Authenticated users see the seller display name and a contact message on clicking the button"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build a My Listings page accessible only to authenticated users. It displays all listings posted by the currently logged-in user. Each listing entry includes the listing image thumbnail, title, price, category badge, and a Delete button. Clicking Delete removes the listing via the backend delete function which enforces ownership. Show an empty state if the user has no listings.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "My Listings page: view and delete own listings",
+          "My Listings page with delete action"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Page is only accessible to authenticated users",
+        "Displays all listings owned by the logged-in user",
+        "Each listing shows thumbnail, title, price, category badge, and Delete button",
+        "Deleting a listing removes it from the backend and updates the UI immediately",
+        "An empty state is shown if the user has no listings"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build a responsive Navbar that includes the app logo and name Campus Circular Mart, navigation links to Browse, Post a Listing, and My Listings, and a login/logout button reflecting authentication state. The navbar must be mobile-responsive with a hamburger menu on small screens.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Navbar with logo, nav links, and login/logout",
+          "Mobile-responsive layout"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar shows logo, Browse, Post a Listing, and My Listings links",
+        "Login button shown for unauthenticated users; logout and user identifier shown for authenticated users",
+        "Navbar collapses to a hamburger menu on mobile screens",
+        "Navigation links route to correct pages"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Apply a warm campus-friendly visual theme consistently across the entire application. Use a color palette centered on campus green as the primary color with warm neutral accents such as cream and light tan for backgrounds. Listing cards should have subtle shadows and rounded corners. Category badges should use distinct muted colors per category. The layout should feel like a modern student marketplace.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Warm, approachable color palette (campus green or indigo)",
+          "Card-based listing grid with image, title, price, category badge",
+          "Responsive, campus-friendly UI with a clean marketplace feel"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Campus green is the primary brand color used in buttons, badges, and accents",
+        "Warm neutral tones are used for page backgrounds",
+        "All listing cards have rounded corners and subtle drop shadows",
+        "Each category has a visually distinct badge color",
+        "The theme is applied consistently across all pages and components",
+        "The UI is fully responsive on mobile, tablet, and desktop"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must reside in a single Motoko actor in backend/main.mo",
+    "Only the listing owner can delete their own listing; this must be enforced in the backend",
+    "Authentication must use Internet Identity only",
+    "Do not edit files under frontend/src/hooks/ or frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "No real-time messaging or chat between students",
+    "No email or SMS notifications",
+    "No external payment processing",
+    "No admin moderation panel",
+    "No user profile editing or settings page",
+    "No listing expiry or renewal system",
+    "No rating or review system for sellers"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Campus Circular Mart logo mark — a circular icon with a stylized shopping bag and a graduation cap rendered in campus green on a white cream background (campus-circular-mart-logo.dim_256x256.png)",
+      "Placeholder listing image for listings without a photo — a soft warm-toned illustration of a generic product silhouette with a subtle campus green border (listing-placeholder.dim_400x300.png)"
+    ],
+    "edits": []
+  }
+}

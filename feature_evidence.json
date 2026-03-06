@@ -1,0 +1,152 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-internet-identity-based-authentication-only-authenticated-users-can-post-listings-or-view-seller-contact-info-unauthenticated-users-can-browse-listings-but-are-shown-a-login-prompt-when-attempting-to-post-or-contact-a-seller",
+      "featureTitle": "Implement Internet Identity-based authentication. Only authenticated users can post listings or view seller contact info. Unauthenticated users can browse listings but are shown a login prompt when attempting to post or contact a seller.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AuthGuard.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-listings-browse-page-home-page-that-displays-all-active-listings-in-a-responsive-card-grid-each-card-shows-the-listing-image-or-a-placeholder-title-price-and-a-category-badge-include-a-search-bar-that-filters-by-title-or-description-and-category-filter-chips-for-all-six-categories-plus-an-all-option-show-an-empty-state-message-when-no-listings-match",
+      "featureTitle": "Build a Listings Browse page (home page) that displays all active listings in a responsive card grid. Each card shows the listing image (or a placeholder), title, price, and a category badge. Include a search bar that filters by title or description, and category filter chips for all six categories plus an All option. Show an empty state message when no listings match.",
+      "files": [
+        "frontend/src/components/CategoryBadge.tsx",
+        "frontend/src/components/EmptyState.tsx",
+        "frontend/src/components/ListingCard.tsx",
+        "frontend/src/pages/BrowseListings.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-post-listing-form-page-accessible-only-to-authenticated-users-the-form-must-include-fields-for-title-text-input-description-textarea-price-numeric-input-category-dropdown-with-all-six-categories-and-photo-upload-image-file-input-on-submission-upload-the-image-and-store-the-listing-in-the-backend-show-validation-errors-for-required-fields",
+      "featureTitle": "Build a Post Listing form page, accessible only to authenticated users. The form must include fields for: title (text input), description (textarea), price (numeric input), category (dropdown with all six categories), and photo upload (image file input). On submission, upload the image and store the listing in the backend. Show validation errors for required fields.",
+      "files": [
+        "frontend/src/pages/PostListing.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-listing-detail-page-or-modal-that-shows-the-full-listing-image-title-description-price-category-badge-seller-display-name-and-post-timestamp-include-a-contact-seller-button-that-is-only-active-for-authenticated-users-when-clicked-by-an-authenticated-user-it-reveals-the-seller-s-display-name-and-a-pre-formatted-contact-message",
+      "featureTitle": "Build a Listing Detail page or modal that shows the full listing: image, title, description, price, category badge, seller display name, and post timestamp. Include a Contact Seller button that is only active for authenticated users. When clicked by an authenticated user, it reveals the seller's display name and a pre-formatted contact message.",
+      "files": [
+        "frontend/src/pages/ListingDetail.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-my-listings-page-accessible-only-to-authenticated-users-it-displays-all-listings-posted-by-the-currently-logged-in-user-each-listing-entry-includes-the-listing-image-thumbnail-title-price-category-badge-and-a-delete-button-clicking-delete-removes-the-listing-via-the-backend-delete-function-which-enforces-ownership-show-an-empty-state-if-the-user-has-no-listings",
+      "featureTitle": "Build a My Listings page accessible only to authenticated users. It displays all listings posted by the currently logged-in user. Each listing entry includes the listing image thumbnail, title, price, category badge, and a Delete button. Clicking Delete removes the listing via the backend delete function which enforces ownership. Show an empty state if the user has no listings.",
+      "files": [
+        "frontend/src/pages/MyListings.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-responsive-navbar-that-includes-the-app-logo-and-name-campus-circular-mart-navigation-links-to-browse-post-a-listing-and-my-listings-and-a-login-logout-button-reflecting-authentication-state-the-navbar-must-be-mobile-responsive-with-a-hamburger-menu-on-small-screens",
+      "featureTitle": "Build a responsive Navbar that includes the app logo and name Campus Circular Mart, navigation links to Browse, Post a Listing, and My Listings, and a login/logout button reflecting authentication state. The navbar must be mobile-responsive with a hamburger menu on small screens.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-warm-campus-friendly-visual-theme-consistently-across-the-entire-application-use-a-color-palette-centered-on-campus-green-as-the-primary-color-with-warm-neutral-accents-such-as-cream-and-light-tan-for-backgrounds-listing-cards-should-have-subtle-shadows-and-rounded-corners-category-badges-should-use-distinct-muted-colors-per-category-the-layout-should-feel-like-a-modern-student-marketplace",
+      "featureTitle": "Apply a warm campus-friendly visual theme consistently across the entire application. Use a color palette centered on campus green as the primary color with warm neutral accents such as cream and light tan for backgrounds. Listing cards should have subtle shadows and rounded corners. Category badges should use distinct muted colors per category. The layout should feel like a modern student marketplace.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

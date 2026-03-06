@@ -1,0 +1,17 @@
+{
+  "frontend/src/index.css": "Global styles with campus-friendly OKLCH color system featuring campus green as primary, warm cream/tan backgrounds, and category-specific color tokens for both light and dark modes.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Plus Jakarta Sans and Lora fonts, campus green color palette, category badge colors, card shadow utilities, and fade-in animation.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profile (get/save), listings (getAll, getMy, create, delete) with proper cache invalidation.",
+  "frontend/src/App.tsx": "Main app with TanStack Router setup defining routes for Browse, Post Listing, My Listings, and Listing Detail pages, with a Layout component that includes Navbar, Footer, and ProfileSetupModal.",
+  "frontend/src/components/Navbar.tsx": "Responsive sticky navbar with app logo, navigation links (Browse, Post a Listing, My Listings), auth state display (user avatar + name or login button), and mobile hamburger menu.",
+  "frontend/src/components/Footer.tsx": "Simple footer with app name, copyright year, and caffeine.ai attribution link with UTM tracking.",
+  "frontend/src/components/ProfileSetupModal.tsx": "Modal dialog that appears after first login to collect the user's display name, saving it via saveCallerUserProfile with validation.",
+  "frontend/src/components/AuthGuard.tsx": "Reusable auth gate component that shows a styled login prompt with a login button when unauthenticated users try to access protected features.",
+  "frontend/src/components/CategoryBadge.tsx": "Pill-shaped badge component rendering category labels with distinct muted colors per category (blue, purple, pink, amber, yellow, gray).",
+  "frontend/src/components/EmptyState.tsx": "Centered empty state component with icon, heading, and optional description for when no listings are found.",
+  "frontend/src/components/ListingCard.tsx": "Reusable listing card component displaying image (stored as data URL or placeholder), title, seller name, price, and category badge — no longer imports ExternalBlob.",
+  "frontend/src/pages/BrowseListings.tsx": "Main browse page with hero section, search input, category filter chips, responsive 4-column listing grid with skeleton loading, and empty states.",
+  "frontend/src/pages/ListingDetail.tsx": "Full listing detail page showing image, title, description, price, category, seller info, timestamp, and a Contact Seller reveal button — no longer imports ExternalBlob.",
+  "frontend/src/pages/PostListing.tsx": "Auth-gated listing creation form that converts uploaded images to compressed JPEG data URLs via Canvas API for storage in the backend imageId field, with inline validation and upload progress feedback.",
+  "frontend/src/pages/MyListings.tsx": "Auth-gated My Listings page with listing rows, thumbnails, category badges, and delete-with-confirmation — no longer imports ExternalBlob."
+}

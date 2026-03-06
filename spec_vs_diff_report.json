@@ -1,0 +1,77 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T12:15:47.217Z",
+  "summary": "The diff implements most of the requested requirements including backend CRUD, Internet Identity authentication, Browse/Post/MyListings/ListingDetail pages, Navbar, theming, and category badges. A few specific acceptance criteria have gaps: the 'return to intended action after login' flow is not clearly implemented, and the generated image assets are listed as required but not confirmed present in the diff.",
+  "missing_requirements": [
+    {
+      "requirement": "After login, the user is returned to their intended action (post-login redirect to original destination)",
+      "reason": "The AuthGuard component shows a login prompt but there is no evidence of storing the intended route and redirecting back to it after authentication completes. The login() call in AuthGuard and Navbar does not capture or restore any pending navigation intent.",
+      "evidence": [
+        "frontend/src/components/AuthGuard.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ]
+    },
+    {
+      "requirement": "Campus Circular Mart logo mark image asset (campus-circular-mart-logo.dim_256x256.png) and placeholder listing image (listing-placeholder.dim_400x300.png) must be present",
+      "reason": "The diff summary lists 25 added files but 5 were omitted due to limits. The image assets are referenced in the code but their actual presence as generated image files cannot be confirmed from the diff summary provided.",
+      "evidence": [
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/ListingCard.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "User Profile system with ProfileSetupModal requiring a display name on first login",
+      "reason": "The build request does not include any user profile creation or setup flow. The non-goals explicitly state 'No user profile editing or settings page'. A ProfileSetupModal and full saveCallerUserProfile/getCallerUserProfile backend functions were added that are not part of any requirement.",
+      "evidence": [
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "UserProfile data model and associated backend functions (getCallerUserProfile, getUserProfile, saveCallerUserProfile)",
+      "reason": "The backend spec only requires listing CRUD and principal-based ownership. No user profile data model or management functions were requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer component with caffeine.ai branding link",
+      "reason": "A footer was not specified in any requirement. The build request defines only Navbar (REQ-7) as a navigation/layout component.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.78,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AuthGuard.tsx",
+    "frontend/src/components/CategoryBadge.tsx",
+    "frontend/src/components/EmptyState.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/ListingCard.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/BrowseListings.tsx",
+    "frontend/src/pages/ListingDetail.tsx",
+    "frontend/src/pages/MyListings.tsx",
+    "frontend/src/pages/PostListing.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
